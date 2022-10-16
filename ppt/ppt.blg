@@ -1,0 +1,9 @@
+[0] Config.pm:302> INFO - This is Biber 2.11
+[0] Config.pm:305> INFO - Logfile is 'ppt.blg'
+[35] biber-MSWIN32:313> INFO - === 
+[65] Biber.pm:371> INFO - Reading 'ppt.bcf'
+[185] Biber.pm:857> INFO - Found 0 citekeys in bib section 0
+[195] Utils.pm:193> WARN - The file 'ppt.bcf' does not contain any citations!
+[204] bbl.pm:617> INFO - Writing 'ppt.bbl' with encoding 'UTF-8'
+[204] bbl.pm:720> INFO - Output to ppt.bbl
+[205] Biber.pm:110> INFO - WARNINGS: 1

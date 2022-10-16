@@ -50,7 +50,7 @@ if __name__ == "__main__":
 
     df = pd.read_csv("../data/cleaned_data.csv")
     # add new potential features
-    df["WRIST_OVER_THIGH"] = df.WRIST / df.THIGH
+    df["ABDOMEN_OVER_THIGH"] = df.ABDOMEN / df.THIGH
     X, y = df.iloc[:, 1:], df.BODYFAT
 
     print("[Start] Selection with Stepwise Regression...")
