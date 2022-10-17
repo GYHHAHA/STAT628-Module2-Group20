@@ -10,6 +10,12 @@ st.write("This app is maintained by STAT-628 Module-2 Group-20 (YUANHAO GENG, JI
 
 st.header("Predict Your Body Fat Now!")
 
+@st.cache(
+    hash_funcs={
+        "_thread.RLock": lambda _: None,
+        "builtins.weakref": lambda _: None,
+    }
+)
 def load_model():
     try:
         from gsheetsdb import connect
@@ -67,8 +73,9 @@ if bodyfat < 0:
 elif bodyfat > 50:
     bodyfat = "Please Check Your Input! The Prediction is too Large!"
     font_size = 30
-bodyfat = str(bodyfat)
-bodyfat += "%"
+else:
+    bodyfat = str(bodyfat)
+    bodyfat += "%"
 
 st.markdown("\
 <style>\
