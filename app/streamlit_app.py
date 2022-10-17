@@ -10,7 +10,6 @@ st.write("This app is maintained by STAT-628 Module-2 Group-20 (YUANHAO GENG, JI
 
 st.header("Predict Your Body Fat Now!")
 
-@st.cache(ttl=600)
 def load_model():
     try:
         from gsheetsdb import connect
