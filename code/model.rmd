@@ -1,0 +1,32 @@
+---
+title: "Model.rmd"
+output: html_document
+---
+### Simple Linear Regression based on Lasso method
+```{r}
+data_fat = read.csv("BodyFat.csv", sep = ",")
+data_fat["WRIST_to_THIGH"] = data_fat["WRIST"]/data_fat["THIGH"]
+lasso_model = lm(BODYFAT~WEIGHT+HEIGHT+ABDOMEN+THIGH,data = data_fat)
+summary(lasso_model)
+```
+
+### Simple Linear Regression based on stepwise regression method
+
+```{r }
+stepwise_reg = lm(BODYFAT~ABDOMEN+WRIST+FOREARM+WEIGHT,data = data_fat)
+summary(stepwise_reg)
+```
+
+### Considering an example that a man has 90 cm of abdomen,170 lbs of weight, 18cm of wrist as well as 26cm of forearm, output its 95% prediction interval as below
+
+```{r }
+example = data.frame(ABDOMEN = 90,WRIST=18,FOREARM=26,WEIGHT=170)
+PI_example = predict(stepwise_reg,newdata = example,interval = "prediction")
+print(PI_example)
+```
+
+### Output the confidence interval of model coefficients
+```{r}
+confint(stepwise_reg,level = 0.95)
+```
+
