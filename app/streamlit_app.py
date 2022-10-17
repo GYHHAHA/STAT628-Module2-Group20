@@ -10,9 +10,29 @@ st.write("This app is maintained by STAT-628 Module-2 Group-20 (YUANHAO GENG, JI
 
 st.header("Predict Your Body Fat Now!")
 
-@st.cache
+@st.cache(ttl=600)
 def load_model():
-    df = pd.read_csv("../data/cleaned_data.csv")
+    try:
+        from gsheetsdb import connect
+        conn = connect()
+        def run_query(query):
+            rows = conn.execute(query, headers=1)
+            rows = rows.fetchall()
+            return rows
+        sheet_url = st.secrets["public_gsheets_url"]
+        rows = run_query(f'SELECT * FROM "{sheet_url}"')
+        df = pd.DataFrame(
+            {
+                "BODYFAT": [r.BODYFAT for r in rows],
+                "ABDOMEN": [r.ABDOMEN for r in rows],
+                "FOREARM": [r.FOREARM for r in rows],
+                "WEIGHT": [r.WEIGHT for r in rows],
+                "WRIST": [r.WRIST for r in rows],
+            }
+        )
+    except:
+        df = pd.read_csv("../data/cleaned_data.csv")
+
     Y = df.BODYFAT
     X = df[["ABDOMEN", "FOREARM", "WEIGHT", "WRIST"]]
     X = sm.add_constant(X)
