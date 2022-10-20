@@ -8,6 +8,12 @@ st.title("Body Fat App")
 
 st.write("This app is maintained by STAT-628 Module-2 Group-20 (YUANHAO GENG, JIAYANG WANG, MINGYU WANG and YUXIN ZHAO). If you have any question about this app, please contact us through geng29@wisc.edu.")
 
+st.header("Useful Information!")
+
+st.write("What Is Body Fat? Your body is made up of water, protein, fat, and minerals. There are two types of fat in your body. Non-fat mass. This is also known as essential fat. This kind of fat is in your bones, liver, kidneys, intestines, and muscles. Fat in these places is required for your body to function normally. ‌Fat mass. Also known as stored fat, this is found in your adipose tissue. This type of fat is used as energy for your body. It insulates and cushions your body. It surrounds your organs and is just under your skin.")
+
+st.write("According to the American Journal of Clinical Nutrition, there are healthy body fat percentages based on your age. For people aged 20 to 39, women should aim for 21% to 32% of body fat. Men should have 8% to 19%. For people 40 to 59, women should fall between 23% to 33% and men should fall around 11% to 21%.")
+
 st.header("Predict Your Body Fat Now!")
 
 @st.cache(

@@ -1,10 +1,14 @@
 # STAT628-Module2-Group20
 
-Course Project
+Yuanhao Geng, Yuxin Zhao, Mingyu Wang, Jiayang Wang
 
 # Project Structure
 
-- code: related coding files
+The requirements.txt contains the required Python package. The summary report main.pdf is in the summary folder.
+
+- app: streamlit app codes
+- code: codes for stats and modeling
 - data: original data and cleaned data
-- docs: summary report tex files
+- image: summary report tex files
 - ppt: presentation tex files
+- summary: summary tex files

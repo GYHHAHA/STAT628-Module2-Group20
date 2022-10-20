@@ -1,7 +1,5 @@
 rm(list = ls())
-kaggle = read.csv("bodyfatkaggle.csv")
-head(kaggle)
-fat = read.csv("cleaned_data.csv")
+fat = read.csv("../cleaned_data.csv")
 head(fat)
 D = fat$DENSITY
 B = fat$BODYFAT
@@ -57,15 +55,3 @@ ggplot()+geom_point(aes(x = fitted(lmmodel), y = resid(lmmodel),col ="Residuals"
   ggtitle("Test of Constant Variance Plot")+
   xlab("Fitted Value")+ylab("Residuals") +
   theme(plot.title = element_text(hjust = 0.5))
-
-
-
-
-
-
-
-
-
-
-
-
